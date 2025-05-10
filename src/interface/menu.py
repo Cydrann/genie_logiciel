@@ -1,6 +1,6 @@
 from tkinter import *
 import os
-from i18n import tr, set_langue, LANGUE_ACTIVE
+from .i18n import tr, set_langue, LANGUE_ACTIVE
 
 class Affiche_Accueil(Tk):
     def __init__(self):
@@ -11,20 +11,19 @@ class Affiche_Accueil(Tk):
         self.config(background="#2A2F4F")
         self.utilisateur_connecte = None
 
-        self.button_folder = os.path.join("res", "image")        
-
+        self.image = os.path.join("res","png","image")        
 
         lang = "fr" if LANGUE_ACTIVE == "FR" else "en"
 
         self.images = {
             "connexion": PhotoImage(file=os.path.join(self.image, "button_1_cyan.png")),
             "mdp": PhotoImage(file=os.path.join(self.image, "button_1_mallow_grand.png")),
-            "fermer": PhotoImage(file=os.path.join(self.image, "close_.png")),
+            "fermer": PhotoImage(file=os.path.join(self.image, "close.png")),
             "lock": PhotoImage(file=os.path.join(self.image, "cadenas.png")),
             "explain": PhotoImage(file=os.path.join(self.image, f"explain_screen_{lang}.png")),
             "condi": PhotoImage(file=os.path.join(self.image, f"conditions_button_{lang}.png")),
             "language": PhotoImage(file=os.path.join(self.image, "language_button.png")),
-            "help_button": PhotoImage(file=os.path.join(self.image, f"help_{lang}.png")),
+            "help_button": PhotoImage(file=os.path.join(self.image, f"help.png")),
             "register_button":PhotoImage(file=os.path.join(self.image, f"register_{lang}.png"))
         }
 
